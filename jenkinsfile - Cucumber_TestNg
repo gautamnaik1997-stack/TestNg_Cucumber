@@ -138,6 +138,11 @@ else if (params.SUITEXMLFILE == 'crossbrowsertesting.xml') {
          <td>${params.ENVIRONMENT}</td>
      </tr>
 
+     <tr>
+          <td><b>Execution Type</b></td>
+          <td>${params.EXECUTION_TYPE}</td>
+     </tr>
+
      ${params.FRAMEWORK == "TestNG" ?
      """
      <tr>
@@ -153,12 +158,6 @@ else if (params.SUITEXMLFILE == 'crossbrowsertesting.xml') {
      </tr>
      """
      }
-
-     <tr>
-         <td><b>Suite</b></td>
-         <td>${params.SUITEXMLFILE}</td>
-     </tr>
-
  </table>
  """
 }

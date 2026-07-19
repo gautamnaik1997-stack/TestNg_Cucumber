@@ -1,5 +1,5 @@
 Feature: Login
-  @sanity
+  @Sanity
   Scenario: Login with successful credentials
     Given User launches browser and enters the url
     When User Clicks on MyAccount then Login button

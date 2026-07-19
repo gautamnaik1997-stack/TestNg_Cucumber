@@ -482,7 +482,7 @@ pipeline {
 
         }
 
-    }
+    }}
     
     stage('Execute Automation') {
 

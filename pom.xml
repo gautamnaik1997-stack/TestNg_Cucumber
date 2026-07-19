@@ -8,6 +8,21 @@
     <artifactId>SeleniumCucumber</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <!-- ========================================================= -->
+    <!-- Default Properties                                        -->
+    <!-- ========================================================= -->
+    <properties>
+        <browser>Edge</browser>
+        <environment>QA</environment>
+        <executionType>Local</executionType>
+        <headless>false</headless>
+        <suiteXmlFile>master.xml</suiteXmlFile>
+        <cucumber.filter.tags>@sanity</cucumber.filter.tags>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <!-- ========================================================= -->
+    <!-- Common Build Plugins                                      -->
+    <!-- ========================================================= -->
     <build>
     <plugins>
     <plugin>
@@ -19,6 +34,19 @@
             <encoding>UTF-8</encoding>
         </configuration>
     </plugin>
+    </plugins>
+</build>
+    <!-- ========================================================= -->
+    <!-- Maven Profiles                                            -->
+    <!-- ========================================================= -->
+    <profiles>
+    <!-- ===================================================== -->
+    <!-- TestNG                                                -->
+    <!-- ===================================================== -->
+    <profile>
+        <id>testng</id>
+        <build>
+            <plugins>
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-plugin</artifactId>
@@ -32,12 +60,41 @@
                     <environment>${environment}</environment>
                     <executionType>${executionType}</executionType>
                     <headless>${headless}</headless>
-                    <cucumber.filter.tags>${cucumber.filter.tags}</cucumber.filter.tags>
                 </systemPropertyVariables>
             </configuration>
         </plugin>
     </plugins>
     </build>
+    </profile>
+
+    <!-- ===================================================== -->
+    <!-- Cucumber                                              -->
+    <!-- ===================================================== -->
+    <profile>
+        <id>cucumber</id>
+        <build>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.3.0</version>
+                    <configuration>
+                        <includes>
+                            <include>**/*Runner.java</include>
+                        </includes>
+                        <systemPropertyVariables>
+                            <browser>${browser}</browser>
+                            <environment>${environment}</environment>
+                            <executionType>${executionType}</executionType>
+                            <headless>${headless}</headless>
+                            <cucumber.filter.tags>${cucumber.filter.tags}</cucumber.filter.tags>
+                        </systemPropertyVariables>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </build>
+    </profile>
+    </profiles>
 
 <dependencies>
     <!-- Source: https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->

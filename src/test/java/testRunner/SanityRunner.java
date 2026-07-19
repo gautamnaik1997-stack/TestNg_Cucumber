@@ -13,7 +13,7 @@ import org.testng.annotations.DataProvider;
         tags= "@sanity"
 )
 
-public class LoginRunnerTest extends AbstractTestNGCucumberTests{
+public class SanityRunner extends AbstractTestNGCucumberTests{
     @Override
     @DataProvider(parallel = false)
     public Object[][] scenarios() {

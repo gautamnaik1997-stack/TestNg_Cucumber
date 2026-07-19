@@ -138,10 +138,21 @@ else if (params.SUITEXMLFILE == 'crossbrowsertesting.xml') {
          <td>${params.ENVIRONMENT}</td>
      </tr>
 
+     ${params.FRAMEWORK == "TestNG" ?
+     """
      <tr>
-         <td><b>Execution Type</b></td>
-         <td>${params.EXECUTION_TYPE}</td>
+         <td><b>Suite</b></td>
+         <td>${params.SUITEXMLFILE}</td>
      </tr>
+     """
+     :
+     """
+     <tr>
+         <td><b>Tag</b></td>
+         <td>${params.CUCUMBERTAG}</td>
+     </tr>
+     """
+     }
 
      <tr>
          <td><b>Suite</b></td>
@@ -366,7 +377,7 @@ pipeline {
 	
 	choice(
     	    name: 'CUCUMBERTAG',
-    	    choices: ['@Smoke','@Sanity','@Regression','@All'],
+    	    choices: ['@Smoke','@Sanity','@Regression', 'No Tag Filter'],
     	    description: 'Select Cucumber Tag'
 	)
 
@@ -420,33 +431,22 @@ pipeline {
     }
       
     stage('Initialize Build') {
-
         steps {
-
             script {
-
                 currentBuild.displayName =
-
                 "#${env.BUILD_NUMBER} | ${params.FRAMEWORK} | ${params.BROWSER} | ${params.ENVIRONMENT}"
-
+                env.REPORT_FOLDER = params.FRAMEWORK.toLowerCase()
                 currentBuild.description =
-
                 """
-		
+
 		Framework : ${params.FRAMEWORK}
 		
                 Browser : ${params.BROWSER}
-
                 Environment : ${params.ENVIRONMENT}
-
                 Execution : ${params.EXECUTION_TYPE}
-
-                Suite : ${params.SUITEXMLFILE}
-
-		Headless : ${params.HEADLESS}
-
+                ${params.FRAMEWORK == "TestNG" ? "Suite : ${params.SUITEXMLFILE}" : "Tag : ${params.CUCUMBERTAG}"}
+		        Headless : ${params.HEADLESS}
                 """
-
             }
 
         }
@@ -471,6 +471,9 @@ pipeline {
             if (params.FRAMEWORK == "TestNG") {
     	    echo "Suite          : ${params.SUITEXMLFILE}"}
 	    else{
+	        if (params.CUCUMBERTAG == "No Tag Filter") {
+	         echo "Tag            : All Scenarios"
+	        } else{
     	    echo "Tag            : ${params.CUCUMBERTAG}"}}
 	
 	    echo "Headless       : ${params.HEADLESS}"
@@ -487,44 +490,45 @@ pipeline {
 
 	script{
 
-	    def browserProperty = ""
-		
-	    if (!(params.SUITEXMLFILE in ['paralleltesting.xml', 'crossbrowsertesting.xml'])) {
-                browserProperty = "-Dbrowser=${params.BROWSER}"
-            }
-		
-	    def frameworkCommand = ""
-
 	    if (params.FRAMEWORK == "TestNG") {
-	    frameworkCommand = """
+	    def browserProperty = ""
+	    if (!(params.SUITEXMLFILE in ['paralleltesting.xml', 'crossbrowsertesting.xml'])) {
+            browserProperty = "-Dbrowser=${params.BROWSER}"
+        }
+	    bat """
             mvn clean test ^
-	    ${browserProperty} ^
+            -Ptestng ^
+	         ${browserProperty} ^
             -DsuiteXmlFile=${params.SUITEXMLFILE} ^
             -Denvironment=${params.ENVIRONMENT} ^
             -DexecutionType=${params.EXECUTION_TYPE} ^
 	    -Dheadless=${params.HEADLESS} 
             """
-
         } else{
-	
-	    frameworkCommand = """
+	    def cucumberTagProperty = ""
+	    if (params.CUCUMBERTAG != "No Tag Filter") {
+            cucumberTagProperty = "-Dcucumber.filter.tags=${params.CUCUMBERTAG}"
+        }
+        bat """
             mvn clean test ^
-            -Dcucumber.filter.tags=${params.CUCUMBERTAG} ^
+            -Pcucumber ^
+            ${cucumberTagProperty} ^
             -Dbrowser=${params.BROWSER} ^
             -Denvironment=${params.ENVIRONMENT} ^
             -DexecutionType=${params.EXECUTION_TYPE} ^
             -Dheadless=${params.HEADLESS}
             """
 	    }
-	bat frameworkCommand
     }}}
     
     stage('Publish Test Results') {
 
         steps {
-
-            junit '**/surefire-reports/*.xml'
-
+            script {
+                if (params.FRAMEWORK == "TestNG") {
+                    junit '**/surefire-reports/*.xml'
+                }
+            }
         }
 
     }}
@@ -550,7 +554,7 @@ pipeline {
 
                 keepAll: true,
 
-                reportDir: "reports/${params.FRAMEWORK.toLowerCase()}",
+                reportDir: "reports/${env.REPORT_FOLDER}",
 
                 reportFiles: 'report*.html',
 

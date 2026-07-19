@@ -33,3 +33,8 @@
 2026-07-19 23:47:17,533 [main] INFO testCases.TC001_LoginVerification - ********** Setting email and password for login **********
 2026-07-19 23:47:18,749 [main] INFO testCases.TC001_LoginVerification - ********** Successful Login **********
 2026-07-19 23:47:18,750 [main] INFO testCases.TC001_LoginVerification - ********** Ending TC001_LoginVerification **********
+2026-07-20 00:11:00,079 [main] INFO testCases.TC001_LoginVerification - ********** Starting TC001_LoginVerification **********
+2026-07-20 00:11:00,138 [main] INFO testCases.TC001_LoginVerification - ********** Clicking Login button from dropdown **********
+2026-07-20 00:11:00,540 [main] INFO testCases.TC001_LoginVerification - ********** Setting email and password for login **********
+2026-07-20 00:11:02,747 [main] INFO testCases.TC001_LoginVerification - ********** Successful Login **********
+2026-07-20 00:11:02,748 [main] INFO testCases.TC001_LoginVerification - ********** Ending TC001_LoginVerification **********

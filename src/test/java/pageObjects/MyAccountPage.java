@@ -1,5 +1,7 @@
 package pageObjects;
 
+import Utils.WaitHelper;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,13 +13,14 @@ public class MyAccountPage extends BasePage {
 
     @FindBy(xpath="//h2[normalize-space()='My Account']")
     WebElement label_MyAccount;
-    @FindBy(xpath="//a[@class='list-group-item'][normalize-space()='Logout']") WebElement lnk_LogOut;
+    By lnk_LogOut = By.xpath("//a[@class='list-group-item'][normalize-space()='Logout']");
 
     public boolean confirmMsg() {
         boolean status = label_MyAccount.isDisplayed();
         return status;
     }
     public void clickLogout() {
-        lnk_LogOut.click();
+        WebElement lnkLogOut = WaitHelper.explicitWait(driver, lnk_LogOut, 10);
+        lnkLogOut.click();
     }
 }

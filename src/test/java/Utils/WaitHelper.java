@@ -9,11 +9,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class WaitHelper {
-    public WebDriver driver;
-    public WebDriverWait wait;
-    public WaitHelper(WebDriver driver, By element, long seconds) {
-        this.driver = driver;
+    public static WebDriverWait wait;
+    public static WebElement explicitWait(WebDriver driver, By element, long seconds) {
         wait =new WebDriverWait(driver, Duration.ofSeconds(seconds));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(element));
+        WebElement mywait = wait.until(ExpectedConditions.visibilityOfElementLocated(element));
+        return mywait;
     }
 }

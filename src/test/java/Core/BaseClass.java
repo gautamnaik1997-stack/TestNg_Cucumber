@@ -35,7 +35,6 @@ public class BaseClass {
         String browser = System.getProperty("browser", br);
         boolean headless = Boolean.parseBoolean(System.getProperty("headless", "false"));
         DriverManager.initializeDriver(os,browser,executionType,headless);
-        DriverFactory.getDriver().manage().window().maximize();
         DriverFactory.getDriver().manage().deleteAllCookies();
         DriverFactory.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         DriverFactory.getDriver().get(p.getProperty("appUrl"));

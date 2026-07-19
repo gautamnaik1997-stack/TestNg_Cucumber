@@ -97,7 +97,7 @@ public class DriverManager {
         // Common Browser Setup
         // ==========================
         DriverFactory.getDriver().manage().deleteAllCookies();
-        if(headless) {
+        if(!headless) {
             DriverFactory.getDriver().manage().window().maximize();
         }
         DriverFactory.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));

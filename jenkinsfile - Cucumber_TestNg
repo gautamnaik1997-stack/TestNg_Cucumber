@@ -466,11 +466,12 @@ pipeline {
             echo "Environment    : ${params.ENVIRONMENT}"
 
             echo "Execution Type : ${params.EXECUTION_TYPE}"
-
+	    
+            script {
             if (params.FRAMEWORK == "TestNG") {
     	    echo "Suite          : ${params.SUITEXMLFILE}"}
 	    else{
-    	    echo "Tag            : ${params.CUCUMBERTAG}"}
+    	    echo "Tag            : ${params.CUCUMBERTAG}"}}
 	
 	    echo "Headless       : ${params.HEADLESS}"
 

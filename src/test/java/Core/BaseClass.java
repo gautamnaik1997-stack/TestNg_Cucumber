@@ -1,6 +1,8 @@
 package Core;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.commons.text.RandomStringGenerator;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.annotations.AfterClass;
@@ -49,7 +51,7 @@ public class BaseClass {
     }
 
     public static String captureScreenshot(String testName) throws IOException {
-        String timeStamp = new SimpleDateFormat("yyyy.mm.dd.HH.mm.ss").format(new Date());
+        String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
         TakesScreenshot ts = (TakesScreenshot) DriverFactory.getDriver();
         String path = System.getProperty("user.dir")+"//screenshots//" + testName + "_" + timeStamp +".png";
         File sourceFile = ts.getScreenshotAs(OutputType.FILE);
@@ -63,4 +65,13 @@ public class BaseClass {
        return DriverFactory.getDriver().getTitle();
     }
 
+    public static String getRandomString(){
+        return RandomStringUtils.randomAlphabetic(5);
+    }
+    public static String getRandomEmail(){
+        return RandomStringUtils.randomAlphanumeric(5) + "@gmail.com";
+    }
+    public static String getRandomPhoneNumber(){
+        return RandomStringUtils.randomNumeric(10);
+    }
 }

@@ -42,3 +42,28 @@
 00:52:43.802 [main] DEBUG stepDefinitions.VerifyLogin - User enters email and password
 00:52:43.885 [main] DEBUG stepDefinitions.VerifyLogin - User clicks Login
 00:52:44.836 [main] DEBUG stepDefinitions.VerifyLogin - The title of the page should be My Account
+18:07:19.212 [main] INFO  stepDefinitions.CommonSteps - Launching browser and entering the url
+18:51:59.856 [main] INFO  stepDefinitions.CommonSteps - Launching browser and entering the url
+18:52:03.717 [main] INFO  stepDefinitions.CommonSteps - Launching browser and entering the url
+18:52:06.496 [main] INFO  stepDefinitions.CommonSteps - Launching browser and entering the url
+18:54:05.617 [main] INFO  stepDefinitions.CommonSteps - Launching browser and entering the url
+18:54:08.817 [main] INFO  stepDefinitions.CommonSteps - Launching browser and entering the url
+18:54:11.699 [main] INFO  stepDefinitions.CommonSteps - Launching browser and entering the url
+18:54:48.501 [main] INFO  stepDefinitions.CommonSteps - Launching browser and entering the url
+18:54:51.671 [main] INFO  stepDefinitions.CommonSteps - Launching browser and entering the url
+18:54:54.552 [main] INFO  stepDefinitions.CommonSteps - Launching browser and entering the url
+18:59:57.886 [main] INFO  stepDefinitions.CommonSteps - Launching browser and entering the url
+19:00:12.659 [main] INFO  stepDefinitions.CommonSteps - Launching browser and entering the url
+19:00:16.403 [main] INFO  stepDefinitions.CommonSteps - Launching browser and entering the url
+19:18:48.278 [main] INFO  stepDefinitions.CommonSteps - Launching browser and entering the url
+19:18:54.019 [main] INFO  stepDefinitions.CommonSteps - Launching browser and entering the url
+19:18:58.215 [main] INFO  stepDefinitions.CommonSteps - Launching browser and entering the url
+19:20:23.017 [main] INFO  stepDefinitions.CommonSteps - Launching browser and entering the url
+19:20:28.501 [main] INFO  stepDefinitions.CommonSteps - Launching browser and entering the url
+19:20:32.504 [main] INFO  stepDefinitions.CommonSteps - Launching browser and entering the url
+19:35:21.454 [main] INFO  stepDefinitions.CommonSteps - Launching browser and entering the url
+19:35:27.742 [main] INFO  stepDefinitions.CommonSteps - Launching browser and entering the url
+19:35:30.615 [main] INFO  stepDefinitions.CommonSteps - Launching browser and entering the url
+19:47:51.559 [main] INFO  stepDefinitions.CommonSteps - Launching browser and entering the url
+19:47:56.832 [main] INFO  stepDefinitions.CommonSteps - Launching browser and entering the url
+19:48:00.838 [main] INFO  stepDefinitions.CommonSteps - Launching browser and entering the url

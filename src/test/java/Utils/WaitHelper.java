@@ -12,7 +12,10 @@ public class WaitHelper {
     public static WebDriverWait wait;
     public static WebElement explicitWait(WebDriver driver, By element, long seconds) {
         wait =new WebDriverWait(driver, Duration.ofSeconds(seconds));
-        WebElement mywait = wait.until(ExpectedConditions.visibilityOfElementLocated(element));
-        return mywait;
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(element));
+    }
+    public static WebElement explicitWait(WebDriver driver, WebElement element, long seconds) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
+        return wait.until(ExpectedConditions.visibilityOf(element));
     }
 }

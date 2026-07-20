@@ -10,7 +10,7 @@ import org.testng.annotations.DataProvider;
         dryRun = false,
         monochrome = true,
         plugin = {"pretty", "html:target/cucumber-report.html"},
-        tags= "@Sanity"
+        tags= "@Regression"
 )
 
 public class SanityRunner extends AbstractTestNGCucumberTests{

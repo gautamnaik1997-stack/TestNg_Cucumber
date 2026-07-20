@@ -13,6 +13,9 @@ public class HomePage extends BasePage {
     @FindBy(xpath="//span[normalize-space()='My Account']") WebElement lnktext_MyAccount;
     @FindBy(how = How.XPATH, using ="//a[normalize-space()='Login']")
     WebElement lnktext_Login;
+    @FindBy(how = How.XPATH, using ="//a[normalize-space()='Register']")
+    WebElement lnk_Register;
+
 
     public void clickMyAccount() {
         lnktext_MyAccount.click();
@@ -20,5 +23,8 @@ public class HomePage extends BasePage {
 
     public void clickLogin() {
         lnktext_Login.click();
+    }
+    public void clickRegister() {
+        lnk_Register.click();
     }
 }

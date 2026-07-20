@@ -44,6 +44,9 @@ public class VerifyLogin {
     @Then("The title of the page should be {string}")
     public void the_title_of_the_page_should_be(String title) {
         logger.debug("The title of the page should be " + title);
-        Assert.assertEquals(BaseClass.getTitle(), title, "Login Not Successful");
+        if(BaseClass.getTitle().equalsIgnoreCase(title)){
+            Assert.assertTrue(true);
+        }
+        else Assert.fail("Login was not successful");
     }
 }

@@ -21,6 +21,11 @@ import java.util.Properties;
 
 
 public class BaseClass {
+    public static String browser;
+    public static String environment;
+    public static String executionType;
+    public static boolean headless;
+    public static String operatingSystem;
     public Logger logger;
     public Properties p;
 
@@ -28,15 +33,16 @@ public class BaseClass {
     @BeforeClass(alwaysRun = true)
     public void setup(String os, String br) throws Exception {
         logger = LogManager.getLogger(this.getClass());
-        String environment = System.getProperty("environment", "QA");
+        environment = System.getProperty("environment", "QA");
         String configFile = System.getProperty("user.dir")+ "//src//test//resources//config//" + environment.toLowerCase() + ".properties";
         p=new Properties();
         FileReader file = new FileReader(configFile);
         p.load(file);
-        String executionType = System.getProperty("executionType", p.getProperty("executiontype"));
-        String browser = System.getProperty("browser", br);
-        boolean headless = Boolean.parseBoolean(System.getProperty("headless", "false"));
-        DriverManager.initializeDriver(os,browser,executionType,headless);
+        executionType = System.getProperty("executionType", p.getProperty("executiontype"));
+        browser = System.getProperty("browser", br);
+        operatingSystem = System.getProperty("os", os);
+        headless = Boolean.parseBoolean(System.getProperty("headless", "false"));
+        DriverManager.initializeDriver(operatingSystem,browser,executionType,headless);
         DriverFactory.getDriver().manage().deleteAllCookies();
         DriverFactory.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         DriverFactory.getDriver().get(p.getProperty("appUrl"));

@@ -21,27 +21,18 @@ public class TestNGListener implements ITestListener {
     public void onStart(ITestContext context) {
 
         extent = ExtentManager.getInstance("testng");
-
-        String className = context.getClass().getName();
-
+        String className = context.getName();
         extent.setSystemInfo("TestCase", className);
-
-        String os = context.getCurrentXmlTest().getParameter("OS");
-
-        extent.setSystemInfo("Operating System", os);
-
-        String browser = context.getCurrentXmlTest().getParameter("Browser");
-
-        extent.setSystemInfo("Browser", browser);
-
+        extent.setSystemInfo("Browser", context.getCurrentXmlTest().getParameter("Browser"));
+        extent.setSystemInfo("Operating System", context.getCurrentXmlTest().getParameter("OS"));
+        extent.setSystemInfo("Environment",System.getProperty("environment", "QA"));
+        extent.setSystemInfo("Execution Type",System.getProperty("executionType", "local"));
         List<String> groups = context.getCurrentXmlTest().getIncludedGroups();
-
         if (!groups.isEmpty()) {
             extent.setSystemInfo("Groups", groups.toString());
         }
 
     }
-
     @Override
     public void onTestStart(ITestResult result) {
         ExtentTestManager.startTest("testng",
@@ -51,14 +42,12 @@ public class TestNGListener implements ITestListener {
                 result.getMethod().getGroups()
         );
     }
-
     @Override
     public void onTestSuccess(ITestResult result) {
 
         ExtentTestManager.pass(result.getMethod().getMethodName() + " executed successfully");
 
     }
-
     @Override
     public void onTestFailure(ITestResult result) {
 
@@ -68,13 +57,10 @@ public class TestNGListener implements ITestListener {
 
             String path = BaseClass.captureScreenshot("testng/" + result.getMethod().getMethodName());
             ExtentTestManager.attachScreenshot(path);
-
         }
 
         catch (IOException e) {
-
             e.printStackTrace();
-
         }
 
     }

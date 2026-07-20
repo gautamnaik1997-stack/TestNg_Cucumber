@@ -67,3 +67,38 @@
 19:47:51.559 [main] INFO  stepDefinitions.CommonSteps - Launching browser and entering the url
 19:47:56.832 [main] INFO  stepDefinitions.CommonSteps - Launching browser and entering the url
 19:48:00.838 [main] INFO  stepDefinitions.CommonSteps - Launching browser and entering the url
+20:49:01.891 [main] INFO  stepDefinitions.CommonSteps - Launching browser and entering the url
+20:49:01.928 [main] DEBUG stepDefinitions.VerifyLogin - User clicks on MyAccount then Login button
+20:49:02.463 [main] DEBUG stepDefinitions.VerifyLogin - User enters email and password
+20:49:02.670 [main] DEBUG stepDefinitions.VerifyLogin - User clicks Login
+20:49:05.935 [main] DEBUG stepDefinitions.VerifyLogin - The title of the page should be My Account
+20:58:06.923 [main] INFO  stepDefinitions.CommonSteps - Launching browser and entering the url
+20:58:06.952 [main] DEBUG stepDefinitions.VerifyLogin - User clicks on MyAccount then Login button
+20:58:07.741 [main] DEBUG stepDefinitions.VerifyLogin - User enters email and password
+20:58:08.046 [main] DEBUG stepDefinitions.VerifyLogin - User clicks Login
+20:58:09.668 [main] DEBUG stepDefinitions.VerifyLogin - The title of the page should be My Account
+21:01:08.588 [main] INFO  stepDefinitions.CommonSteps - Launching browser and entering the url
+21:01:08.595 [main] DEBUG stepDefinitions.VerifyLogin - User clicks on MyAccount then Login button
+21:01:09.254 [main] DEBUG stepDefinitions.VerifyLogin - User enters email and password
+21:01:09.457 [main] DEBUG stepDefinitions.VerifyLogin - User clicks Login
+21:01:11.268 [main] DEBUG stepDefinitions.VerifyLogin - The title of the page should be My Account
+21:15:41.372 [main] INFO  stepDefinitions.CommonSteps - Launching browser and entering the url
+21:15:41.379 [main] DEBUG stepDefinitions.VerifyLogin - User clicks on MyAccount then Login button
+21:15:41.949 [main] DEBUG stepDefinitions.VerifyLogin - User enters email and password
+21:15:42.164 [main] DEBUG stepDefinitions.VerifyLogin - User clicks Login
+21:15:43.828 [main] DEBUG stepDefinitions.VerifyLogin - The title of the page should be My Account
+21:17:15.597 [main] INFO  stepDefinitions.CommonSteps - Launching browser and entering the url
+21:17:15.604 [main] DEBUG stepDefinitions.VerifyLogin - User clicks on MyAccount then Login button
+21:17:16.213 [main] DEBUG stepDefinitions.VerifyLogin - User enters email and password
+21:17:16.430 [main] DEBUG stepDefinitions.VerifyLogin - User clicks Login
+21:17:17.291 [main] DEBUG stepDefinitions.VerifyLogin - The title of the page should be My Account
+21:21:05.202 [main] INFO  stepDefinitions.CommonSteps - Launching browser and entering the url
+21:21:05.208 [main] DEBUG stepDefinitions.VerifyLogin - User clicks on MyAccount then Login button
+21:21:05.770 [main] DEBUG stepDefinitions.VerifyLogin - User enters email and password
+21:21:06.240 [main] DEBUG stepDefinitions.VerifyLogin - User clicks Login
+21:21:07.745 [main] DEBUG stepDefinitions.VerifyLogin - The title of the page should be My Account
+21:23:37.537 [main] INFO  stepDefinitions.CommonSteps - Launching browser and entering the url
+21:23:37.544 [main] DEBUG stepDefinitions.VerifyLogin - User clicks on MyAccount then Login button
+21:23:38.390 [main] DEBUG stepDefinitions.VerifyLogin - User enters email and password
+21:23:38.693 [main] DEBUG stepDefinitions.VerifyLogin - User clicks Login
+21:23:39.697 [main] DEBUG stepDefinitions.VerifyLogin - The title of the page should be My Account

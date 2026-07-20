@@ -3,7 +3,7 @@ package ReportManager;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
+import Core.BaseClass;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
@@ -11,7 +11,7 @@ import com.aventstack.extentreports.ExtentTest;
 
 public class ExtentManager {
 
-    private static ExtentReports extent;
+    public static ExtentReports extent;
     private static String reportName;
     private static String reportType;
 
@@ -54,6 +54,8 @@ public class ExtentManager {
 
             extent.setSystemInfo("Project Name", "Selenium With Jenkins");
             extent.setSystemInfo("Reporter", System.getProperty("user.name"));
+            extent.setSystemInfo("Headless Execution", String.valueOf(BaseClass.headless));
+            extent.setSystemInfo("Java Version", System.getProperty("java.version"));
         }
 
         return extent;

@@ -540,7 +540,6 @@ pipeline {
 
                 artifacts:
                 'reports/**/*.html,screenshots/**/*.png,logs/*.log',
-
                 allowEmptyArchive: true
 
             )

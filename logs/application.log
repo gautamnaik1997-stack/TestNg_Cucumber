@@ -38,3 +38,18 @@
 2026-07-20 00:11:00,540 [main] INFO testCases.TC001_LoginVerification - ********** Setting email and password for login **********
 2026-07-20 00:11:02,747 [main] INFO testCases.TC001_LoginVerification - ********** Successful Login **********
 2026-07-20 00:11:02,748 [main] INFO testCases.TC001_LoginVerification - ********** Ending TC001_LoginVerification **********
+2026-07-20 20:41:59,701 [main] INFO testCases.TC001_LoginVerification - ********** Starting TC001_LoginVerification **********
+2026-07-20 20:41:59,778 [main] INFO testCases.TC001_LoginVerification - ********** Clicking Login button from dropdown **********
+2026-07-20 20:42:00,142 [main] INFO testCases.TC001_LoginVerification - ********** Setting email and password for login **********
+2026-07-20 20:42:01,677 [main] INFO testCases.TC001_LoginVerification - ********** Successful Login **********
+2026-07-20 20:42:01,678 [main] INFO testCases.TC001_LoginVerification - ********** Ending TC001_LoginVerification **********
+2026-07-20 20:48:08,810 [main] INFO testCases.TC001_LoginVerification - ********** Starting TC001_LoginVerification **********
+2026-07-20 20:48:08,838 [main] INFO testCases.TC001_LoginVerification - ********** Clicking Login button from dropdown **********
+2026-07-20 20:48:09,253 [main] INFO testCases.TC001_LoginVerification - ********** Setting email and password for login **********
+2026-07-20 20:48:11,043 [main] INFO testCases.TC001_LoginVerification - ********** Successful Login **********
+2026-07-20 20:48:11,044 [main] INFO testCases.TC001_LoginVerification - ********** Ending TC001_LoginVerification **********
+2026-07-20 21:06:30,703 [main] INFO testCases.TC001_LoginVerification - ********** Starting TC001_LoginVerification **********
+2026-07-20 21:06:30,819 [main] INFO testCases.TC001_LoginVerification - ********** Clicking Login button from dropdown **********
+2026-07-20 21:06:31,207 [main] INFO testCases.TC001_LoginVerification - ********** Setting email and password for login **********
+2026-07-20 21:06:33,317 [main] INFO testCases.TC001_LoginVerification - ********** Successful Login **********
+2026-07-20 21:06:33,318 [main] INFO testCases.TC001_LoginVerification - ********** Ending TC001_LoginVerification **********
